@@ -1,39 +1,26 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+# NLP Challenge
 
-# PROJECT | Natural Language Processing Challenge
+Classifies news articles as fake or real using machine learning (Random Forest & Naive Bayes) on a labeled dataset of ~40,000 examples. All workflow steps, from preprocessing with NLTK, TF-IDF feature engineering, training, evaluation, and output submission, are demonstrated in a single Jupyter notebook.
 
-## Introduction
+## Quick Start
 
-Learning how to process text is a skill required for Data Scientists/AI Engineers. 
+1. Clone/download this repo and place `data.csv` and `validation_data.csv` in the folder.
+2. Open `roland-NLP-Challenge.ipynb` in Jupyter.
+3. Run cells sequentially:
+    - Install/import: pandas, numpy, scikit-learn, nltk, matplotlib, seaborn
+    - Load and clean data (`title` and `text`)
+    - Apply TF-IDF vectorization
+    - Train Random Forest and Naive Bayes classifiers
+    - Evaluate with accuracy and F1 metrics
+    - Save predictions to `validation_predictions.csv`
 
-In this project, you will put these skills into practice to identify whether a news headline is real or fake news.
+## Results
 
-## Project Overview
+- Random Forest: ~92% accuracy
+- Naive Bayes: ~94% accuracy
 
-In the file `dataset/data.csv`, you will find a dataset containing news articles with the following columns:
+## Requirements
 
-- **`label`**: 0 if the news is fake, 1 if the news is real.
-- **`title`**: The headline of the news article.
-- **`text`**: The full content of the article.
-- **`subject`**: The category or topic of the news.
-- **`date`**: The publication date of the article.
+- Python 3.x
+- Libraries: pandas, numpy, scikit-learn, nltk, matplotlib, seaborn
 
-Your goal is to build a classifier that is able to distinguish between the two.
-
-Once you have a classifier built, then use it to predict the labels for `dataset/validation_data.csv`. Generate a new file
-where the label `2` has been replaced by `0` (fake) or `1` (real) according to your model. Please respect the original file format, 
-do not include extra columns, and respect the column separator. 
-
-Please ensure to split the `data.csv` into **training** and **test** datasets before using it for model training or evaluation.
-
-## Guidance
-
-Like in a real life scenario, you are able to make your own choices and text treatment.
-Use the techniques you have learned and the common packages to process this data and classify the text.
-
-## Deliverables
-
-1. **Python Code:** Provide well-documented Python code that conducts the analysis.
-2. **Predictions:** A csv file in the same format as `validation_data.csv` but with the predicted labels (0 or 1)
-3. **Accuracy estimation:** Provide the teacher with your estimation of how your model will perform.
-4. **Presentation:** You will present your model in a 10-minute presentation. Your teacher will provide further instructions.
